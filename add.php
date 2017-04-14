@@ -44,7 +44,6 @@ if(isset($_POST["add_task"])) {
 */
 </script>
 
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 <title>Task System - Add</title>

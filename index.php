@@ -39,7 +39,6 @@ while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 */
 </script>
 
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 <title>Task System</title>
@@ -63,12 +62,22 @@ while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
     <div style="text-align: left;">
         <a href="add" class="btn btn-primary"><i class="fa fa-plus"></i> Add Task</a>
     </div>
+
+    <!-- ALERT -->
     <?php if(isset($_COOKIE['SUCCESS'])) { ?>
-    <br>
-    <div class="alert alert-success">
-        <?php echo $_COOKIE['SUCCESS']; ?>
+    <div id="alert-wrapper">
+        <br>
+        <div class="alert alert-success">
+            <?php echo $_COOKIE['SUCCESS']; ?>
+        </div>
     </div>
+    <script type="text/javascript">
+        setTimeout(function(){
+            $("#alert-wrapper").slideUp(350);
+        }, 2000);
+    </script>
     <?php } ?>
+
     <br>
         <?php if(count($data) > 0) { ?>
         <table class="list">
